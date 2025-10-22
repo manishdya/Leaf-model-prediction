@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌿 Manish Leaf Prediction Portal 🌿</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <!-- Main Heading -->
+  <header class="main-heading">
+    <h1>🌸 Welcome to Leaf Prediction Portal 🌸</h1>
+  </header>
+
+  <div class="main-container">
+
+    <!-- Left Section -->
+    <div class="image-section">
+      <img src="{{ url_for('static', filename='collegepic.jpg') }}" alt="Manish" class="profile-image">
+      <h2>Welcome!</h2>
+      <p>Predict your plant species instantly using leaf measurements 🌿</p>
+    </div>
+
+    <!-- Middle Section -->
+    <div class="form-section">
+      <h2>🔮 Prediction Interface</h2>
+
+      <div class="project-showcase">
+        <h4>🌿 Leaf Predictor</h4>
+        <div class="feature">
+          <span class="icon">🌸</span>
+          <p>Predict species from four leaf features</p>
+        </div>
+        <div class="feature">
+          <span class="icon">🤖</span>
+          <p>Choose between KNN and Naive Bayes models</p>
+        </div>
+        <div class="feature">
+          <span class="icon">📊</span>
+          <p>Instantly view accuracy and model metrics</p>
+        </div>
+      </div>
+
+      <form action="/predict" method="POST" class="form">
+        <label>Sepal Length (cm):</label>
+        <input type="number" step="any" name="input1" placeholder="e.g. 5.1" required>
+
+        <label>Sepal Width (cm):</label>
+        <input type="number" step="any" name="input2" placeholder="e.g. 3.5" required>
+
+        <label>Petal Length (cm):</label>
+        <input type="number" step="any" name="input3" placeholder="e.g. 1.4" required>
+
+        <label>Petal Width (cm):</label>
+        <input type="number" step="any" name="input4" placeholder="e.g. 0.2" required>
+
+        <label>Select Model:</label>
+        <select name="model" required>
+          <option value="KNN">KNN</option>
+          <option value="NaiveBayes">Naive Bayes</option>
+        </select>
+
+        <button type="submit">Predict 🌱</button>
+      </form>
+
+      {% if prediction_text %}
+      <div class="result">
+        <h3>{{ prediction_text }}</h3>
+        {% if accuracy_text %}
+          <p>{{ accuracy_text }}</p>
+        {% endif %}
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- Right Section -->
+    <div class="metrics-section">
+      {% if conf_matrix %}
+      <h2>📈 Model Metrics</h2>
+
+      <div class="metric-box">
+        <h4>Confusion Matrix</h4>
+        <table class="conf-matrix">
+          {% for row in conf_matrix %}
+          <tr>
+            {% for val in row %}
+            <td>{{ val }}</td>
+            {% endfor %}
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+
+      <div class="metric-box">
+        <h4>Classification Report</h4>
+        <pre class="class-report">{{ class_report }}</pre>
+      </div>
+
+      {% if accuracy_text %}
+      <div class="metric-box">
+        <h4>Accuracy Score</h4>
+        <p>{{ accuracy_text }}</p>
+      </div>
+      {% endif %}
+      {% endif %}
+    </div>
+  </div>
+
+</body>
+</html>
