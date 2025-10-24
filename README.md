@@ -18,27 +18,27 @@ This project highlights the end-to-end pipeline of a machine learning applicatio
 
 ## 🧩 Technologies and Resources Used
 
-The project is implemented using **Python 3.x** and leverages essential machine learning and data manipulation libraries such as **NumPy** and **scikit-learn**. The models are trained offline and saved as serialized files using the **pickle** module for quick loading during predictions. Data visualization for performance metrics, such as confusion matrices and reports, is presented in structured tabular formats to make interpretation straightforward. The user interface is created with basic web technologies, ensuring accessibility and simplicity without diverting focus from the machine learning functionality.
+The project is implemented using **Python 3.x** and leverages essential machine learning and data manipulation libraries such as **NumPy** ,**Pandas**, **scikit-learn**. The models are trained offline and saved as serialized files using the **pickle** module for quick loading during predictions. Data visualization for performance metrics, such as confusion matrices and reports, is presented in structured tabular formats to make interpretation straightforward. The user interface is created with basic web technologies, ensuring accessibility and simplicity without diverting focus from the machine learning functionality.
 
 ---
 
+
 ## 📁 Project Structure
 
-leaf-prediction-portal/
-├── app.py # Main application logic
-├── requirements.txt # List of dependencies
-├── templates/
-│ └── index.html # Web interface template
-├── static/
-│ ├── style.css # Styling for layout and design
-│ └── collegepic.jpg # Optional banner image
-├── knn.pkl # Pre-trained KNN model
-├── Navie.pkl # Pre-trained Naive Bayes model
-├── knn_Test.json # Metrics for KNN model
-└── Navie_Test.json # Metrics for Naive Bayes model
+| File/Folder | Description |
+|--------------|-------------|
+| **app.py** | Main application logic for running the Leaf Prediction Portal |
+| **requirements.txt** | List of dependencies required to run the project |
+| **templates/** | Contains HTML templates for the web interface |
+| └── **index.html** | Main webpage interface |
+| **static/** | Folder for static assets like CSS and images |
+| ├── **style.css** | Stylesheet for layout and design |
+| └── **collegepic.jpg** | Optional banner or background image |
+| **knn.pkl** | Pre-trained KNN model for leaf prediction |
+| **Navie.pkl** | Pre-trained Naive Bayes model for leaf prediction |
+| **knn_Test.json** | Evaluation metrics for KNN model |
+| **Navie_Test.json** | Evaluation metrics for Naive Bayes model |
 
-swift
-Copy code
 
 ---
 
