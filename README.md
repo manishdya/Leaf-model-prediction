@@ -43,22 +43,45 @@ The project is implemented using **Python 3.x** and leverages essential machine 
 ---
 
 ## 🧠 Example of Stored Metrics (JSON)
+## 📊 Model Evaluation (Naive Bayes / KNN Example)
 
-The following is an example of how model metrics are stored in JSON format. These metrics are displayed dynamically in the portal when a prediction is made:
+| Metric | Value |
+|---------|--------|
+| **Accuracy Score** | `0.9667` |
+| **Confusion Matrix** | `[[11, 0, 0], [0, 7, 0], [0, 1, 11]]` |
+| **Classification Report** |  
+| | **Class** | **Precision** | **Recall** | **F1-Score** | **Support** |
+| | 0 | 1.00 | 1.00 | 1.00 | 11 |
+| | 1 | 0.88 | 1.00 | 0.93 | 7 |
+| | 2 | 1.00 | 0.92 | 0.96 | 12 |
+| | **Accuracy** |  |  | **0.97** | **30** |
+| | **Macro Avg** | 0.96 | 0.97 | 0.96 | 30 |
+| | **Weighted Avg** | 0.97 | 0.97 | 0.97 | 30 |
 
-```json
-{
-    "Confusion_Matrix": [
-        [11, 0, 0],
-        [0, 7, 0],
-        [0, 1, 11]
-    ],
-    "Classification_Report": "              precision    recall  f1-score   support\n\n           0       1.00      1.00      1.00        11\n           1       0.88      1.00      0.93         7\n           2       1.00      0.92      0.96        12\n\n    accuracy                           0.97        30\n   macro avg       0.96      0.97      0.96        30\nweighted avg       0.97      0.97      0.97        30\n",
-    "Accuracy_Score": 0.9666666666666667
-}
-⚙️ Installation and Usage
-To set up the project locally, ensure Python and pip are installed. Clone the repository, create a virtual environment, and install the dependencies from requirements.txt. Once setup is complete, you can run the main file to start the local server and access the interactive interface through your browser. The portal will allow you to input measurements, select the desired model, and view classification results immediately. The results include not only the predicted class but also complete evaluation details for the selected model, allowing for transparent comparison and analysis.
 
-📈 Future Scope
-This project can be further enhanced by incorporating more advanced classification algorithms such as Support Vector Machines, Decision Trees, Random Forests, and Neural Networks. Visual dashboards could be added to display performance charts or allow users to upload CSV data for batch predictions. In the future, the system could also include automated model retraining using new datasets or cloud-based deployment for broader accessibility. These improvements would transform this simple prediction portal into a robust, full-scale machine learning experimentation platform.
+---
+
+## ⚙️ Installation and Usage
+
+| Step | Description |
+|------|--------------|
+| **1. Prerequisites** | Ensure **Python** and **pip** are installed on your system. |
+| **2. Clone Repository** | Run `git clone <repository_url>` to download the project locally. |
+| **3. Create Virtual Environment** | Use `python -m venv venv` to create and activate it. |
+| **4. Install Dependencies** | Run `pip install -r requirements.txt` to install required packages. |
+| **5. Run Application** | Start the server using `python app.py`. |
+| **6. Access Web App** | Open your browser and navigate to `http://127.0.0.1:5000/`. |
+| **7. Interact with Portal** | Input measurements, select a model, and view classification results instantly — including predicted class and evaluation metrics. |
+
+---
+
+## 🚀 Future Scope
+
+| Area | Description |
+|-------|--------------|
+| **Advanced Algorithms** | Add models like **SVM**, **Decision Trees**, **Random Forests**, and **Neural Networks**. |
+| **Visual Dashboards** | Integrate performance charts and allow CSV uploads for batch predictions. |
+| **Automated Retraining** | Enable model retraining using new datasets for continuous improvement. |
+| **Cloud Deployment** | Deploy on cloud platforms for broader accessibility and scalability. |
+| **Full-Scale ML Platform** | Transform this project into a comprehensive experimentation and analysis portal. |
 
